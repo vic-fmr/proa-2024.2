@@ -1,0 +1,61 @@
+#elemento_pai{
+    width: 45%;
+    height: 200px;
+    background-color: #dac5c5;
+    float: left;
+}
+#elemento_mae{
+    width: 45%;
+    height: 200px;
+    background-color: #a48787;
+    float: right;
+}
+
+
+
+.imagemesquerda{
+    width: 115px;
+    height: 250px;
+    border-radius: 5%;
+    margin-left: 4px;
+    margin-top: 10px;
+    float: left;
+}
+
+.imagemesquerda img{
+    width: 100%;
+}
+.imagemdireita{
+    width: 200px;
+    height: 200px;
+    border-radius: 5%;
+    margin-left: 4px;
+    margin-top: 10px;
+    float: left;
+}
+
+.imagemdireita img{
+    width: 100%;
+}
+
+
+#textoesquerda{
+    margin-left: 45px;
+    top: 2px;
+}
+#textodireita{
+    margin-left: 30px;
+    top: 2px;
+}
+
+
+.paragrafoesquerda{
+    font-size: xx-large;
+    text-indent: 10px;
+    text-align: justify;
+}
+.paragrafodireita{
+    font-size: xx-large;
+    text-indent: 10px;
+    text-align: justify;
+}
