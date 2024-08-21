@@ -8,19 +8,20 @@
 
   <style>
     body{
-      text-align: center;
-      padding: 10%;
       display: flex;
       flex-direction: column;
-      background-image: linear-gradient(to right, black,rgb(88, 13, 13),rgb(58, 32, 32) );
+      justify-content: center;
+      align-items: center;
+      
+      
+      background-image: linear-gradient(to right, rgb(138, 138, 138),rgb(189, 139, 139),rgb(175, 94, 94) );
       color: white;
       font-family: Arial, Helvetica, sans-serif;
     }
 
     button{
       font-weight: bolder;
-      margin-left: 200px;
-      margin-right: 200px;
+  
     }
   </style>
 
@@ -44,107 +45,59 @@
       
     }
 
-    function atividade3() {
-      let idade = prompt("Escreva a idade da pessoa: ");
+    function atividade3(){
 
-      if (idade <= 12) {
-        alert("Criança");
-      } else if (idade <= 17) {
-        alert("Adolescente");
-      } else if (idade <= 50) {
-        alert("Adulto");
-      } else if (idade <= 100) {
-        alert("Idoso");
-      } else {
-        alert("Caindo aos pedaços");
-      }
+      numero = parseInt(prompt('Me diga um numero: '));
+
+      numeroincrementado = numero + 1;
+      numerodecrementado = numero - 1;
+
+      alert('Numero decrementado: ' + numerodecrementado);
+      alert('Numero incrementado: ' + numeroincrementado);
+
     }
 
     function atividade4(){
 
-      let nota = prompt('Digite a nota em questão: ');
+      primeiro_numero = parseInt(prompt('Digite o primeiro numero: '));
+      segundo_numero = parseInt(prompt('Digite o segundo numero: '));
 
-      if(nota <= 2){
-        alert('Nota: F');
-      } else if(nota <= 4){
-        alert('Nota: E');
-      }else if(nota <= 6){
-        alert('Nota: C');
-      }else if(nota <= 8){
-        alert('Nota: B');
-      }else if(nota <= 10){
-        alert('Nota: A');
-      } else{
-        alert('Nota: Invalida');
-      }
+      resto_divisao = primeiro_numero%segundo_numero
 
-      }
+      alert('O resto da divisão entre eles é: ' + resto_divisao)
+}
 
+function atividade5(){
 
-      function atividade5(){
+  temperaturaF = parseInt(prompt('Digite a temperatura em Fahrenheit: : '));
 
-      let dia = parseInt(prompt('Digite o numero de 1 a 7: '));
-      let diadasemana
+  temperaturaC = (temperaturaF - 32)/1.8;
 
-      switch(dia){
-        case dia = 1:
-        diadasemana = 'Domingo';
-        break;
-        
-        case dia = 2:
-        diadasemana = 'Segunda';
-        break;
-        
-        case dia = 3:
-        diadasemana = 'Terça';
-        break;
-        
-        case dia = 4:
-        diadasemana = 'Quarta';
-        break;
-        
-        case dia = 5:
-        diadasemana = 'Quinta';
-        break;
-        
-        case dia = 6:
-        diadasemana = 'Sexta';
-        break;
-        
-        case dia = 7:
-        diadasemana = 'Sabado';
-        break;
-
-        default:
-        diadasemana = 'Valores inválidos'
-        break;
-      }
-
-      alert(diadasemana);
+  alert('Temperatura em ºC: ' + temperaturaC);
+}
 
 
+function atividade6(){
+  numero = parseInt(prompt('Digite um numero: '));
+
+  dobro = numero * 2;
+  metade = numero / 2;
+
+  alert('Dobro: ' + dobro);
+  alert('Metade: ' + metade);
+}
+
+function atividade7(){
+  numero = parseInt(prompt('Digite um numero: '));
+  exponencial = parseInt(prompt('Digite o exponencial: '));
+
+  exponenciacao = numero ** exponencial;
+
+  alert('Resultado: ' + exponenciacao);
+
+}
 
 
-    }
-
-    function atividade6(){
-      let faturamento = prompt('Digite seu faturamento: ');
-      let bonus;
-
-      if(faturamento < 1000){
-        bonus = 0;
-        alert('Sem bônus');
-      } else if(faturamento <= 5000){
-        bonus = faturamento * 0.05;
-        alert('Bonus de ' + bonus + ' reais');
-      }else{
-        bonus = faturamento * 0.1;
-        alert('Bonus de ' + bonus + ' reais');
-      }
-
-
-
-    }
       
   </script>
 
@@ -155,13 +108,15 @@
     <button type="button" onclick="atividade1()">Média aritmetica</button><br>
 
     <button type="button" onclick="atividade2()">Área do triangulo</button><br>
+
+    <button type="button" onclick="atividade3()">Incrementar e decrementar valor</button><br>
     
-    <button type="button" onclick="atividade3()">Verificar idade</button><br>
-
-    <button type="button" onclick="atividade4()">Verificar nota</button><br>
-
-    <button type="button" onclick="atividade5()">Verificar dia da semana</button><br>
-
-    <button type="button" onclick="atividade6()">Verificar bônus</button>
+    <button type="button" onclick="atividade4()">Resto da divisão entre dois numeros</button><br>
+    
+    <button type="button" onclick="atividade5()">Conversão Fahrenheit em Celsius</button><br>
+    
+    <button type="button" onclick="atividade6()">Dobro e metade do numero</button><br>
+    
+    <button type="button" onclick="atividade7()">Exponenciacao</button><br>
   </body>
 </html>
