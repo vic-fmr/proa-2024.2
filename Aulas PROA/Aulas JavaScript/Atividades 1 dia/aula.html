@@ -1,105 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
 
-  <style>
-    body{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-image: linear-gradient(to right, rgb(138, 138, 138),rgb(189, 139, 139),rgb(175, 94, 94) );
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atividade 1</title>
+</head>
 
-    button{
-      font-weight: bolder;
-  
-    }
-  </style>
+<style>
+  body {
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, rgb(71, 71, 71), rgb(51, 114, 143), rgb(10, 82, 58));
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
 
-  <script>
+  #tudo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-    function atividade1() {
-      let x = parseInt(prompt("Escreva o primeiro número: "));
-      let y = parseInt(prompt("Escreva o segundo número: "));
-      let z = parseInt(prompt("Escreva o terceiro número: "));
+  button {
+    margin: 5px;
+    font-weight: bolder;
+    height: 70px;
+    font-size: 18px;
+    width: 400px;
+    left: calc(50%-200px);
+  }
+</style>
 
-      media = (x + y + z)/3
-      alert(media);
-      }
+<script>
 
-    function atividade2() {
-      let base = prompt('Qual a base do triângulo?');
-      let altura = prompt('E a altura?');
+  function atividade1() {
+    let x = parseInt(prompt("Escreva o primeiro número: "));
+    let y = parseInt(prompt("Escreva o segundo número: "));
+    let z = parseInt(prompt("Escreva o terceiro número: "));
 
-      area = (base*altura)/2;
-      alert('Área do triangulo:' + area);
-      
-    }
+    media = (x + y + z) / 3
+    alert(media);
+  }
 
-    function atividade3(){
+  function atividade2() {
+    let base = prompt('Qual a base do triângulo?');
+    let altura = prompt('E a altura?');
 
-      numero = parseInt(prompt('Me diga um numero: '));
+    area = (base * altura) / 2;
+    alert('Área do triangulo:' + area);
 
-      numeroincrementado = numero + 1;
-      numerodecrementado = numero - 1;
+  }
 
-      alert('Numero decrementado: ' + numerodecrementado);
-      alert('Numero incrementado: ' + numeroincrementado);
+  function atividade3() {
 
-    }
+    numero = parseInt(prompt('Me diga um numero: '));
 
-    function atividade4(){
+    numeroincrementado = numero + 1;
+    numerodecrementado = numero - 1;
 
-      primeiro_numero = parseInt(prompt('Digite o primeiro numero: '));
-      segundo_numero = parseInt(prompt('Digite o segundo numero: '));
+    alert('Numero decrementado: ' + numerodecrementado);
+    alert('Numero incrementado: ' + numeroincrementado);
 
-      resto_divisao = primeiro_numero%segundo_numero
+  }
 
-      alert('O resto da divisão entre eles é: ' + resto_divisao)
-}
+  function atividade4() {
 
-function atividade5(){
+    primeiro_numero = parseInt(prompt('Digite o primeiro numero: '));
+    segundo_numero = parseInt(prompt('Digite o segundo numero: '));
 
-  temperaturaF = parseInt(prompt('Digite a temperatura em Fahrenheit: : '));
+    resto_divisao = primeiro_numero % segundo_numero
 
-  temperaturaC = (temperaturaF - 32)/1.8;
+    alert('O resto da divisão entre eles é: ' + resto_divisao)
+  }
 
-  alert('Temperatura em ºC: ' + temperaturaC);
-}
+  function atividade5() {
 
+    temperaturaF = parseInt(prompt('Digite a temperatura em Fahrenheit: : '));
 
-function atividade6(){
-  numero = parseInt(prompt('Digite um numero: '));
+    temperaturaC = (temperaturaF - 32) / 1.8;
 
-  dobro = numero * 2;
-  metade = numero / 2;
-
-  alert('Dobro: ' + dobro);
-  alert('Metade: ' + metade);
-}
-
-function atividade7(){
-  numero = parseInt(prompt('Digite um numero: '));
-  exponencial = parseInt(prompt('Digite o exponencial: '));
-
-  exponenciacao = numero ** exponencial;
-
-  alert('Resultado: ' + exponenciacao);
-
-}
+    alert('Temperatura em ºC: ' + temperaturaC);
+  }
 
 
-      
-  </script>
+  function atividade6() {
+    numero = parseInt(prompt('Digite um numero: '));
 
-  <body>
+    dobro = numero * 2;
+    metade = numero / 2;
+
+    alert('Dobro: ' + dobro);
+    alert('Metade: ' + metade);
+  }
+
+  function atividade7() {
+    numero = parseInt(prompt('Digite um numero: '));
+    exponencial = parseInt(prompt('Digite o exponencial: '));
+
+    exponenciacao = numero ** exponencial;
+
+    alert('Resultado: ' + exponenciacao);
+
+  }
+
+
+
+</script>
+
+<body>
+  <div id="tudo">
 
     <h1>Atividades da aula 1</h1>
 
@@ -108,13 +119,16 @@ function atividade7(){
     <button type="button" onclick="atividade2()">Área do triangulo</button><br>
 
     <button type="button" onclick="atividade3()">Incrementar e decrementar valor</button><br>
-    
+
     <button type="button" onclick="atividade4()">Resto da divisão entre dois numeros</button><br>
-    
+
     <button type="button" onclick="atividade5()">Conversão Fahrenheit em Celsius</button><br>
-    
+
     <button type="button" onclick="atividade6()">Dobro e metade do numero</button><br>
-    
+
     <button type="button" onclick="atividade7()">Exponenciacao</button><br>
-  </body>
+  </div>
+</body>
+
+
 </html>
