@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atividade 3</title>
+</head>
+
+<style>
+  body {
+    height: 100%;
+    background-image: linear-gradient(to right, rgb(96, 103, 94), rgb(42, 103, 61), rgb(10, 82, 58));
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+
+  #tudo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  button {
+    margin: 5px;
+    font-weight: bolder;
+    height: 70px;
+    font-size: 18px;
+    width: 400px;
+    left: calc(50%-200px);
+  }
+</style>
+
+<script>
+
+console.log('Estrutura de repetição basica com "for": ')
+
+for(let t = 10; t <= 20; t++){
+    console.log('numero: ' + t);
+}
+
+console.log('-------------')
+console.log('Estrutura de repetição basica com "while": ')
+
+let i = 10
+
+while(i<=20){
+    console.log(i)
+    i++;
+}
+
+console.log('-------------')
+console.log('Estrutura de repetição basica com "do while": ')
+
+
+let text = ""
+let n = 0;
+
+do{
+    text = "O numero é " + n;
+    console.log(text);
+    n ++;
+}
+while(n < 0);
+
+
+console.log('-------------')
+console.log('Estrutura de repetição basica para strings: ')
+
+
+let palavras = ['figma' , 'palavra' , 'java' , 'galinha'];
+
+for(let i of palavras){
+    console.log(i);
+}
+
+console.log('-------------')
+console.log('Estrutura de repetição basica com "for" e "break": ')
+
+for(let t = 10; t <= 20; t++){
+    if(t==14){
+        break;
+    }
+    console.log('numero: ' + t);
+}
+
+console.log('-------------')
+console.log('Estrutura de repetição basica com "for" e "continue": ')
+
+for(let t = 10; t <= 20; t++){
+    if(t==14){
+        console.log('Numero ignorado');
+        continue;
+    }
+    console.log('numero: ' + t);
+}
+
+console.log('-------------')
+console.log('Estrutura de repetição basica para somas com 3 de 1 ao 10: ')
+
+for(let x = 1; x <= 10; x++){
+    resultado = x + 3;
+    console.log( x + ' + 3 = ' + resultado);
+}
+
+console.log('-------------')
+console.log('Estrutura de repetição basica para tabuada do 3: ')
+
+for(let x = 1; x <= 10; x++){
+    resultado = x * 3;
+    console.log( x + ' * 3 = ' + resultado);
+}
+
+console.log('-------------')
+console.log('Estrutura de repetição basica para verificar se é impar: ')
+
+
+for(i=1; i <= 15; i++){
+    if(i%2 != 0){
+        console.log('o numero '+ i + ' é impar');
+    } else{
+        console.log('o numero '+ i + ' é par');
+    }
+
+}
+
+</script>
+
+<body>
+  <div id="tudo">
+
+    <h1>Atividades da aula 3</h1>
+
+    <h2>Estruturas de Repetição:</h2>
+    <p>Resultados apresentados no "Console" e códigos no "Sources" ao inspecionar a página.</p>
+
+  </div>
+</body>
+
+</html>
+
