@@ -1,26 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
-    body{
-        height: 100vh;
-        background-color: black;
-    }
-    .shiny-box {
-    width: 200px;
-    height: 80%;
-    background-color: #333;
-    border-radius: 10px;
-    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8), /* Sombra Brilhante */
-                0 0 10px 5px rgba(255, 255, 255, 0.5);   /* Efeito adicional de brilho */
-}
+  </head>
 
-</style>
-<body>
-    <div class="shiny-box">Sua Div Aqui</div>
-</body>
+  <style>
+    * {
+      margin: 5px;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      float: left;
+    }
+    p {
+      padding: 4px;
+      border: 1px inset;
+      width: 100px;
+    }
+  </style>
+
+  <script>
+    let num1 = parseFloat(document.getElementById("num1").value);
+    let num2 = parseFloat(document.getElementById("num2").value);
+
+    function somar(pars) {
+      resultado = num1 + num2;
+      document.getElementById("resultado").innerText =
+        "Resultado: " + resultado;
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+    }
+    function subtrair() {
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+      resultado = num1 - num2;
+      document.getElementById("resultado").innerText =
+        "Resultado: " + resultado;
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+    }
+    function multiplicar() {
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+      resultado = num1 * num2;
+      document.getElementById("resultado").innerText =
+        "Resultado: " + resultado;
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+    }
+    function dividir() {
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+      resultado = num1 / num2;
+      document.getElementById("resultado").innerText =
+        "Resultado: " + resultado;
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+    }
+  </script>
+
+  <body>
+    <input type="text" id="num1" placeholder="Primeiro Número" />
+    <input type="text" id="num2" placeholder="Segundo Número" />
+    <button type="submit" onclick="somar()">Somar</button>
+    <button type="submit" onclick="subtrair()">Subtrair</button>
+    <button type="submit" onclick="multiplicar()">Multiplicar</button>
+    <button type="submit" onclick="dividir()">Dividir</button>
+    <p id="resultado">Resultado:</p>
+  </body>
 </html>

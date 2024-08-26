@@ -7,16 +7,25 @@
   </head>
 
   <style>
-    body {
-      height: 96vh;
-      background-color: black;
 
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background-image: linear-gradient(to bottom right, rgb(22, 22, 22), rgb(40, 40, 40), rgb(32, 32, 32));
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding-top: 20px;
       color: white;
       font-family: Arial, Helvetica, sans-serif;
       text-align: center;
     }
 
-    .inputs{
+    #calculadora .inputs{
       background-color: #333;
       border: 1px solid inset;
       border-radius: 5px;
@@ -26,8 +35,16 @@
       text-align: center;
     }
 
+    #verificarprimo .inputs{
+      background-color: #333;border: 1px solid inset;
+      border-radius: 5px;
+      font-size: 24px;
+      width: 30%;
+      align-self: center;
+    }
+
     #botoes button{
-      width: 30px;
+      width: 20%;
       text-align: center;
       background-color: black;
       font-size: larger;
@@ -35,76 +52,77 @@
 
     }
 
+    #fundos{
+      align-items: center;
+      width: 100%;
+      height: 80vh;
+      display: flex;
+      justify-content: space-evenly;
+    }
 
-    #teste {
-      padding: 10px;
-      width: 200px;
-      height: 70%;
+
+    .blocos {
+      padding: 1%;
+      width:auto;
+      height: 50%;
       background-color: #333;
       border-radius: 10px;
       box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8),
-        /* Sombra Brilhante */ 0 0 10px 5px rgba(255, 255, 255, 0.5); /* Efeito adicional de brilho */
+                  0 0 10px 5px rgba(255, 255, 255, 0.5);
+       
+    }
+
+    .blocos{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #calculadora p{
+      margin-top: 40px;
+    }
+
+    #verificarprimo{
+      
     }
   </style>
 
-  <script>
-    let frutas = ["Maçã", "Banana", "Pera"];
-
-    console.log("Array Original");
-    console.log(frutas);
-    console.log("-------------");
-
-    console.log("Item especifico da Array");
-    console.log(frutas[2]);
-    console.log("-------------");
-
-    console.log('Inserindo item "Manga" no Array');
-    frutas.push("Manga");
-    console.log(frutas);
-    console.log("-------------");
-
-    console.log("Retirando ultimo item do Array");
-    frutas.pop(frutas);
-    console.log(frutas);
-    console.log("-------------");
-
-    console.log("Retirando primeiro item do Array");
-    frutas.shift(frutas);
-    console.log(frutas);
-    console.log("-------------");
-
-    console.log("Coloca o elemento no primeiro lugar da Array");
-    frutas.unshift("Morango");
-    console.log(frutas);
-
-    console.log("Coleta o tamanho do array");
-    console.log(frutas.length);
-
-    console.log(
-      "Coloca item no lugar especifico da Array (Indice, Quantos itens serão removidos, Item)"
-    );
-    frutas.splice(2, 0, 90);
-    console.log(frutas);
-
-    console.log("Imprime ultimo item do Array");
-    console.log(frutas[frutas.length - 1]);
-  </script>
+  <script src="calc.js"></script>
+  <script src="verificarprimo.js"></script>
 
   <body>
     <h1>Atividades da aula 4</h1>
-    <div id="teste">
+    <div id="fundos">
+    <div class="blocos" id="calculadora">
       <h1>Calculadora</h1>
       <div id="inputs">
-        <input type="text" class="inputs" id="num1"  />
-        <input type="text" class="inputs" id="num2" />
+        <input type="text" class="inputs" id="num1">
+        <input type="text" class="inputs" id="num2">
       </div>
       <div id="botoes">
-        <button type="submit" onclick="somar()">+</button>
+        <button type="submit" onclick="somar()"> + </button>
         <button type="submit" onclick="subtrair()">-</button>
-        <button type="submit" onclick="multiplicar()">.</button>
-        <button type="submit" onclick="dividir()">/</button>
+        <button type="submit" onclick="multiplicar()">x</button>
+        <button type="submit" onclick="dividir()">÷</button>
+        <p id="resultado">Resultado:</p>
       </div>
-      <p id="resultado"></p>
+    </div>
+      <div class="blocos" id="verificarprimo">
+        <h1>Verificar Primo</h1>
+        <input type="text"class="inputs" id="primo" placeholder="Insira o número">
+        <button type="submit" onclick="verificarprimo()">Verificar</button>
+        <p id="resultadoprimo"></p>
+
+      </div>
+      <div class="blocos">
+        
+      </div>
+      <div class="blocos">
+        
+      </div>
+      <div class="blocos">
+        
+      </div>
     </div>
     <h2>Manipulação de Arrays:</h2>
     <p>
