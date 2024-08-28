@@ -31,6 +31,7 @@
       margin: 10px;
       font-size: large;
       text-align: center;
+      color: white;
     }
     #verificarprimo .inputs{
       background-color: #333;border: 1px solid inset;
@@ -81,20 +82,20 @@
       margin-top: 40px;
     }
 
-    #verificarprimo{
-      
-    }
   </style>
 
   <script src="calc.js"></script>
   <script src="verificarprimo.js"></script>
   <script src="advinharnumero.js"></script>
+  <script src="verificarcaracteres.js"></script>
+  <script src="arrays.js"></script>
+  <script src="verificarmedia.js"></script>
 
   <body>
     <h1>Atividades da aula 4</h1>
     <div id="fundos">
     <div class="blocos" id="calculadora">
-      <h1>Calculadora</h1>
+      <h2>Calculadora</h2>
       <div id="inputs">
         <input type="text" class="inputs" id="num1">
         <input type="text" class="inputs" id="num2">
@@ -108,25 +109,35 @@
       </div>
     </div>
       <div class="blocos" id="verificarprimo">
-        <h1>Verificar Primo</h1>
+        <h2>Verificar Primo</h2>
         <input type="text"class="inputs" id="primo">
         <button type="submit" onclick="verificarprimo()">Verificar</button>
         <p id="resultadoprimo"></p>
       </div>
       <div class="blocos" id="caracteresespeciais">
+        <h2>Verificar Caractéres Especiais</h2>
         <input type="text" id="palavra" placeholder='Digite alguma palavra'>
         <button type="submit" onclick="verificarcaracteres()">Verificar</button>
-        <p id="resultadocaracteres"></p>
+        <p id="resultadocaracteres">Resultado: </p>
         
       </div>
-      <div class="blocos">
-        
+      <div class="blocos" id="media">
+        <h2>Média</h2>
+        <input type="text" class="inputs" id="num01">
+        <input type="text" class="inputs" id="num02">
+        <input type="text" class="inputs" id="num03">
+        <input type="text" class="inputs" id="num04">
+        <button type="submit" onclick="verificarmedia()">Verificar</button>
+        <p id="resultadomedia">Resultado: </p>
+
       </div>
       <div class="blocos" id="advinharnumero">
-        <input type="text" class="inputs" id="numerochutado">
+        <h2>Advinhar número</h2>
+        <label>Tente adivinhar o número de 1 a 100</label>
+        <input type="text" class="inputs" id="numerochutado" placeholder="Digite aqui">
         <button type="submit" onclick="advinharnumero()">Verificar</button>
         <p id='resultadochute'></p>
-        
+
       </div>
     </div>
     <h2>Manipulação de Arrays:</h2>

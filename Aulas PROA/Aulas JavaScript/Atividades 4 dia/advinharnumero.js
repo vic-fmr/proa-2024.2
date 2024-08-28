@@ -5,6 +5,10 @@ function advinharnumero() {
 
     if(numero == numeroaleatorio){
         document.getElementById('resultadochute').innerText = 'Acertou';
+    } else if(numero < numeroaleatorio){
+        document.getElementById('resultadochute').innerText = 'Ainda não, mais que isso!';
+    } else{
+        document.getElementById('resultadochute').innerText = 'Ainda não, menos que isso!';
     }
 
 }
