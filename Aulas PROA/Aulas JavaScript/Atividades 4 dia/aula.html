@@ -63,8 +63,6 @@
       display: flex;
       justify-content: space-evenly;
     }
-
-
     .blocos {
       padding: 1%;
       width:200px;
@@ -114,9 +112,11 @@
         <input type="text"class="inputs" id="primo">
         <button type="submit" onclick="verificarprimo()">Verificar</button>
         <p id="resultadoprimo"></p>
-
       </div>
-      <div class="blocos" >
+      <div class="blocos" id="caracteresespeciais">
+        <input type="text" id="palavra" placeholder='Digite alguma palavra'>
+        <button type="submit" onclick="verificarcaracteres()">Verificar</button>
+        <p id="resultadocaracteres"></p>
         
       </div>
       <div class="blocos">
