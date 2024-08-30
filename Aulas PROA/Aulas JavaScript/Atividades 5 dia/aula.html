@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atividade 5</title>
+</head>
+
+<style>
+  body {
+    height: 100%;
+    background-image: linear-gradient(to right, rgb(96, 103, 94), rgb(42, 103, 61), rgb(10, 82, 58));
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+
+  #tudo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  button {
+    margin: 5px;
+    font-weight: bolder;
+    height: 70px;
+    font-size: 18px;
+    width: 400px;
+    left: calc(50%-200px);
+  }
+</style>
+
+<script>
+function somar(){
+    return 2+3
+}
+
+console.log(somar());
+console.log('-----------');
+
+
+
+function soma(valor1, valor2){
+    return valor1 + valor2;
+}
+
+console.log(soma(3,5))
+console.log('-----------');
+
+function fruta(fruta){
+    let text = "";
+    if(fruta == 'abacaxi'){
+        text = 'Abacaxi é um fruto doce'
+    } else if(fruta == 'limao'){
+        text = 'Limão é um fruto azedo'
+    }
+    return text
+}
+
+console.log(fruta('limao'))
+console.log('-----------');
+
+function getSizes(alt, lar, com){
+    let area = alt*lar
+    let volume = alt*lar*com
+    let sizes = [area, volume]
+    return sizes
+}
+console.log(getSizes(3,3,2))
+console.log(getSizes(3,3,2)[0])
+console.log(getSizes(3,3,2)[1])
+console.log('-----------');
+
+function calcTabuada(num){
+    for(let x = 1; x <= 10; x++){
+        resultado = x * num;
+        console.log('tabuada do numero '+ num + ': ' + x + ' * '+ num + ' = ' + resultado);
+    }
+    return 'Acabou'
+}
+
+console.log(calcTabuada(3))
+
+</script>
+
+<body>
+  <div id="tudo">
+
+    <h1>Atividades da aula 5</h1>
+
+    <h2>Funções parametrizadas:</h2>
+    <p>Resultados apresentados no "Console" e códigos no "Sources" ao inspecionar a página.</p>
+
+  </div>
+</body>
+
+</html>
+
+

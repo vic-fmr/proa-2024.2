@@ -13,7 +13,7 @@ body{
 
 form{
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -26,13 +26,21 @@ form{
 }
 
 .inputs{
-    border: 2px inset;
     margin-bottom: 5%;
+    border: none;
+    border-radius: 2px;
+    width: 90%;
+    font-size: 100%;
 }
 
-ul > li{
-    display: none;
+button{
+    width: 90%;
+    height: 20%;
+    font-family: Poppins;
+    background-color: rgba(58, 58, 148, 0.493);
+    border: none;
 }
+
 
 
 
