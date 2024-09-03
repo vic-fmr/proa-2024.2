@@ -1,74 +1,109 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 5</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atividade 5</title>
-</head>
-
-<style>
-  body {
-    height: 100%;
-    background-image: linear-gradient(to right, rgb(179, 159, 159), rgb(136, 22, 22), rgb(54, 29, 29));
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-  }
-
-  #tudo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  button {
-    margin: 5px;
-    font-weight: bolder;
-    height: 70px;
-    font-size: 18px;
-    width: 400px;
-    left: calc(50%-200px);
-  }
-</style>
-
-<script>
-let pessoa = {
-    nome: 'Carlos',
-    idade: 30,
-    profissao: 'Desenvolvedor',
-    saudacao: function(){
-        console.log('Olá, meu nome é ' + this.nome)
+  <style>
+    body {
+      height: 100%;
+      background-image: linear-gradient(
+        to right,
+        rgb(179, 159, 159),
+        rgb(136, 22, 22),
+        rgb(54, 29, 29)
+      );
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
     }
-}
 
-pessoa.saudacao();
+    #tudo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
-let outraPessoa = {
-    nome: 'Ana',
-    idade: 35,
-    saudacao: pessoa.saudacao
-};
+    button {
+      margin: 5px;
+      font-weight: bolder;
+      height: 70px;
+      font-size: 18px;
+      width: 400px;
+      left: calc(50%-200px);
+    }
+  </style>
 
-outraPessoa.saudacao();
-</script>
+  <script>
+    let pessoa = {
+        nome: 'Carlos',
+        idade: 30,
+        profissao: 'Desenvolvedor',
+        saudacao: function(){
+            console.log('Olá, meu nome é ' + this.nome)
+        }
+    }
 
-<body>
-  <div id="tudo">
+    pessoa.saudacao();
 
-    <h1>Atividades da aula 5</h1>
+    let outraPessoa = {
+        nome: 'Ana',
+        idade: 35,
+        saudacao: pessoa.saudacao
+    }
 
-    <h2>Introdução a POO:</h2>
-    <p>Resultados apresentados no "Console" e códigos no "Sources" ao inspecionar a página.</p>
+    outraPessoa.saudacao();
 
-  </div>
-</body>
+    class Carro{
+      constructor(marca, modelo){
+        this.marca = marca;
+        this.modelo = modelo;
+      }
 
+      
+
+
+      detalhes() {
+        return `${this.marca} ${this.modelo}`
+      }
+    }
+    class Motoristas {
+        constructor (nome, idade){
+          this.nome = nome;
+          this.idade = idade;
+        }
+
+        caracteristicas(){
+          return this.nome + " " + this.idade;
+        }
+
+      }
+    
+
+    const meuCarro = new Carro('Toyota','Corolla');
+    const meuSegundoCarro = new Carro('Honda', 'Civic');
+    const motoristaCarro = new Motoristas('Jorginho','34');
+    const motoristaSegundoCarro = new Motoristas('Jeniffer' , '27');
+
+    console.log(meuCarro.detalhes());
+    console.log(meuSegundoCarro.detalhes());
+    console.log(motoristaCarro.caracteristicas())
+    console.log(motoristaSegundoCarro.caracteristicas())
+
+  </script>
+
+  <body>
+    <div id="tudo">
+      <h1>Atividades da aula 5</h1>
+
+      <h2>Introdução a POO:</h2>
+      <p>
+        Resultados apresentados no "Console" e códigos no "Sources" ao
+        inspecionar a página.
+      </p>
+    </div>
+  </body>
 </html>
-
-
