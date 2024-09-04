@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(68, 65, 65);
+    background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.641), rgba(255, 255, 255, 0.236), rgba(255, 255, 255, 0.747), rgba(255, 255, 255, 0.418));
+}
+/*Manipulando o tamanho dos espaços dos slides*/
+.slider{/*Div Geral*/
+    margin: 0 auto;
+    width: 800px;
+    height: 600px;
+    overflow: hidden;
+}
+.slides{/*Segunda Div: Inputs e Imagens*/
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+.slides input{
+    display: none;
+}
+.slide{/*Divs de cada imagem*/
+    width: 20%;
+    margin: 0px 1%;
+    position: relative;
+    transition: 2s;
+}
+.slide img, .slide_primeiro img{
+    width: 600px;
+    height: 450px;
+}
+.manual-navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: 31%;
+    display: flex;
+    justify-content: center;
+}
+.btn_manual{
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn_manual:not(:last-child){
+    margin-right: 1%;
+}
+.btn_manual:hover{
+    background-color: brown;
+}
+#radio1:checked ~ .primeiro{
+    margin-left: 0;
+}
+#radio2:checked ~ .primeiro{
+    margin-left: -20%;
+}
+#radio3:checked ~ .primeiro{
+    margin-left: -40%;
+}
+#radio4:checked ~ .primeiro{
+    margin-left: -60%;
+}
+#radio5:checked ~ .primeiro{
+    margin-left: -80%;
+}
