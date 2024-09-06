@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class Animal {
+        constructor(nome, idade, especie) {
+            this.nome = nome;
+            this.idade = idade;
+            this.especie = especie;
+        }
+
+        falar() {
+            console.log(this.nome + " faz um som")
+        }
+
+        dormir() {
+            console.log(this.nome + " está dormindo")
+        }
+
+        info() {
+            console.log("Nome: " + this.nome + " Idade: " + this.idade + " Especie: " + this.especie)
+        }
+    }
+
+    class Cachorro extends Animal {
+        constructor(nome, idade, raca) {
+            super(nome, idade, "Cachorro");
+            this.raca = raca;
+        }
+
+        falar() {
+            console.log(this.nome + " late");
+        }
+
+        buscarBola() {
+            console.log(this.nome + " está buscando a bola")
+        }
+
+        info() {
+            super.info();
+            console.log("Raça: " + this.raca);
+        }
+
+    }
+
+
+
+
+    const meuCachorro = new Cachorro("Rex", 5, "Labrador");
+    const meuAnimal = new Animal("Anderson", 2, "Felino")
+
+
+    meuCachorro.falar();
+    meuCachorro.dormir();
+    meuCachorro.buscarBola();
+    meuCachorro.info();
+
+    
+
+</script>
+
+<body>
+
+</body>
+
+</html>

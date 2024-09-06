@@ -1,109 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atividade 5</title>
-  </head>
 
-  <style>
-    body {
-      height: 100%;
-      background-image: linear-gradient(
-        to right,
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atividade </title>
+</head>
+
+<style>
+  body {
+    height: 100%;
+    background-image: linear-gradient(to right,
         rgb(179, 159, 159),
         rgb(136, 22, 22),
-        rgb(54, 29, 29)
-      );
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
+        rgb(54, 29, 29));
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+
+  #tudo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  button {
+    margin: 5px;
+    font-weight: bolder;
+    height: 70px;
+    font-size: 18px;
+    width: 400px;
+    left: calc(50%-200px);
+  }
+</style>
+
+<script>
+  let pessoa = {
+    nome: 'Carlos',
+    idade: 30,
+    profissao: 'Desenvolvedor',
+    saudacao: function () {
+      console.log('Olá, meu nome é ' + this.nome)
+    }
+  }
+
+  pessoa.saudacao();
+
+  let outraPessoa = {
+    nome: 'Ana',
+    idade: 35,
+    saudacao: pessoa.saudacao
+  }
+
+  outraPessoa.saudacao();
+
+  class Carro {
+    constructor(marca, modelo) {
+      this.marca = marca;
+      this.modelo = modelo;
     }
 
-    #tudo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+
+
+
+    detalhes() {
+      return `${this.marca} ${this.modelo}`
+    }
+  }
+  class Motoristas {
+    constructor(nome, idade) {
+      this.nome = nome;
+      this.idade = idade;
     }
 
-    button {
-      margin: 5px;
-      font-weight: bolder;
-      height: 70px;
-      font-size: 18px;
-      width: 400px;
-      left: calc(50%-200px);
-    }
-  </style>
-
-  <script>
-    let pessoa = {
-        nome: 'Carlos',
-        idade: 30,
-        profissao: 'Desenvolvedor',
-        saudacao: function(){
-            console.log('Olá, meu nome é ' + this.nome)
-        }
+    caracteristicas() {
+      return this.nome + " " + this.idade;
     }
 
-    pessoa.saudacao();
+  }
 
-    let outraPessoa = {
-        nome: 'Ana',
-        idade: 35,
-        saudacao: pessoa.saudacao
+
+  const meuCarro = new Carro('Toyota', 'Corolla');
+  const meuSegundoCarro = new Carro('Honda', 'Civic');
+  const motoristaCarro = new Motoristas('Jorginho', '34');
+  const motoristaSegundoCarro = new Motoristas('Jeniffer', '27');
+
+  console.log(meuCarro.detalhes());
+  console.log(meuSegundoCarro.detalhes());
+  console.log(motoristaCarro.caracteristicas())
+  console.log(motoristaSegundoCarro.caracteristicas())
+
+
+  class ContaBancaria {
+    #saldo;
+
+    constructor(saldoInicial) {
+      this.#saldo = saldoInicial;
     }
 
-    outraPessoa.saudacao();
+    depositar(valor) {
+      this.#saldo += valor;
+    }
 
-    class Carro{
-      constructor(marca, modelo){
-        this.marca = marca;
-        this.modelo = modelo;
+    getSaldo() {
+      return this.#saldo
+    }
+
+    set saldo(novoSaldo) {
+      if (novoSaldo < 0) {
+        console.log("Saldo negativo, inválido")
+      } else {
+        this.#saldo = novoSaldo
       }
+    }
 
-      
+  }
+
+  const minhaConta = new ContaBancaria(2000);
+
+  console.log(minhaConta.getSaldo())
+
+  minhaConta.depositar(-500)
+  console.log(minhaConta.getSaldo())
+
+  minhaConta.saldo = 4000
+  console.log(minhaConta.getSaldo())
+
+  // Define o objeto "Contabilidade"
+  class Contabilidade {
+    //Define a variável privada "funcionários" como um array
+    #funcionarios = [];
+
+    //Construtor para quando o objeto for criado, definir o indeice 0 com o valor do parâmetro
+    constructor(nomeFuncionario) {
+      this.#funcionarios.push(nomeFuncionario)
+    }
+
+    //O método toma o valor atual do array
+    getFuncionarios() {
+      return this.#funcionarios
+    }
 
 
-      detalhes() {
-        return `${this.marca} ${this.modelo}`
+    cadastrar(novoFuncionario) {
+      this.#funcionarios.push(novoFuncionario)
+      return this.#funcionarios
+    }
+
+    set funcionarios(novoTime) {
+      if (!novoTime || !isNaN(novoTime)) {
+        console.log("Nome inválido")
+      } else {
+        this.#funcionarios = [novoTime]
       }
     }
-    class Motoristas {
-        constructor (nome, idade){
-          this.nome = nome;
-          this.idade = idade;
-        }
+  }
 
-        caracteristicas(){
-          return this.nome + " " + this.idade;
-        }
+  const meuTime = new Contabilidade("Junior")
+  console.log(meuTime.getFuncionarios())
 
-      }
-    
+  meuTime.cadastrar("Alice")
+  console.log(meuTime.getFuncionarios())
 
-    const meuCarro = new Carro('Toyota','Corolla');
-    const meuSegundoCarro = new Carro('Honda', 'Civic');
-    const motoristaCarro = new Motoristas('Jorginho','34');
-    const motoristaSegundoCarro = new Motoristas('Jeniffer' , '27');
+  meuTime.funcionarios = 234
+  console.log(meuTime.getFuncionarios())
 
-    console.log(meuCarro.detalhes());
-    console.log(meuSegundoCarro.detalhes());
-    console.log(motoristaCarro.caracteristicas())
-    console.log(motoristaSegundoCarro.caracteristicas())
 
-  </script>
 
-  <body>
-    <div id="tudo">
-      <h1>Atividades da aula 5</h1>
 
-      <h2>Introdução a POO:</h2>
-      <p>
-        Resultados apresentados no "Console" e códigos no "Sources" ao
-        inspecionar a página.
-      </p>
-    </div>
-  </body>
+
+
+</script>
+
+<body>
+  <div id="tudo">
+    <h1>Atividades da aula 5</h1>
+
+    <h2>Introdução a POO:</h2>
+    <p>
+      Resultados apresentados no "Console" e códigos no "Sources" ao
+      inspecionar a página.
+    </p>
+  </div>
+</body>
+
 </html>
