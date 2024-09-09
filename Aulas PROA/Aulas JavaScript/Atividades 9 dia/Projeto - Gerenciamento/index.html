@@ -31,6 +31,22 @@
         position: fixed;
         background-color: rgb(19, 19, 19);
         z-index: 1;
+
+        button {
+          background-color: rgb(15, 31, 56);
+          width: 200px;
+          height: 50px;
+          font-size: medium;
+          border: none;
+          transition: transform 0.2s;
+        }
+
+        button:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+          background-color: rgb(255, 255, 255);
+          color: black;
+        }
       }
 
       #header {
@@ -41,25 +57,9 @@
         justify-content: space-between;
         align-items: center;
       }
-
-      button {
-        background-color: rgb(15, 31, 56);
-        width: 200px;
-        height: 50px;
-        font-size: medium;
-        transition: transform 0.2s;
-      }
-
-      button:hover {
-        transform: scale(1.1);
-        cursor: pointer;
-        background-color: rgb(255, 255, 255);
-        color: black;
-      }
-
       /* Estilos para o modal e sobreposição */
       #modal-overlay {
-        display: flex;
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
@@ -79,29 +79,31 @@
         color: white;
         text-align: center;
         font-size: larger;
-      }
-      #tela_cadastro input{
-        text-align: center;
-        width: 100%;
-        font-size: large;
-        margin-bottom: 3%;
-      }
 
-      #fechar-btn {
-        background-color: red;
-        color: white;
-        border: none;
-        padding: 10px;
-        margin: 10px;
-        cursor: pointer;
-      }
-      #cadastrar-btn {
-        background-color: rgb(77, 167, 212);
-        color: white;
-        border: none;
-        padding: 10px;
-        margin-top: 10px;
-        cursor: pointer;
+        input {
+          text-align: center;
+          width: 100%;
+          font-size: large;
+          margin-bottom: 3%;
+          color: black;
+        }
+
+        #fechar-btn {
+          background-color: red;
+          color: white;
+          border: none;
+          padding: 10px;
+          margin: 10px;
+          cursor: pointer;
+        }
+        #cadastro-btn {
+          background-color: rgb(77, 167, 212);
+          color: white;
+          border: none;
+          padding: 10px;
+          margin-top: 10px;
+          cursor: pointer;
+        }
       }
 
       #geral {
@@ -116,29 +118,46 @@
           rgba(255, 255, 255, 0.05),
           rgba(255, 255, 255, 0.2)
         );
-      }
+        text-align: center;
 
-      #tabela_gerenciamento {
-        border: 5px solid #141414;
-        border-radius: 5px;
-        width: 100%;
-        display: table;
-        background-color: #141414;
-        border-collapse: collapse;
-      }
+        #tabela_gerenciamento {
+          border: 5px solid #141414;
+          border-radius: 5px;
+          width: 100%;
+          display: table;
+          background-color: #141414;
+          border-collapse: collapse;
+        }
 
-      #indice_tabela {
-        font-weight: bold;
-        background-color: #000000;
-      }
+        #indice_tabela {
+          font-weight: bold;
+          background-color: #000000;
+        }
 
-      .linha {
-        display: table-row;
-      }
+        .linha {
+          display: table-row;
+        }
 
-      .coluna {
-        display: table-cell;
-        padding: 10px;
+        .coluna {
+          display: table-cell;
+          padding: 10px;
+          margin-top: 1%;
+        }
+        button {
+          background-color: rgb(64, 6, 6);
+          width:150px;
+          height: 40px;
+          font-size: medium;
+          border: none;
+          transition: transform 0.2s;
+        }
+
+        button:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+          background-color: rgb(255, 255, 255);
+          color: rgb(66, 12, 12);
+        }
       }
     </style>
 
@@ -152,7 +171,8 @@
     <!-- Modal e sobreposição -->
     <div id="modal-overlay">
       <div id="tela_cadastro">
-        <h1>Cadastrar Atividade</h1><br>
+        <h1>Cadastrar Atividade</h1>
+        <br />
         <label>Data de Cadastro</label>
         <input type="date" />
         <br />
@@ -181,6 +201,7 @@
           <div class="coluna">Função</div>
           <div class="coluna">Última atividade</div>
           <div class="coluna">Data limite</div>
+          <div class="coluna">Remover Atividade</div>
         </div>
         <div id="corpo_tabela" class="linha">
           <div class="coluna">23/04/2024</div>
@@ -188,6 +209,7 @@
           <div class="coluna">Designer</div>
           <div class="coluna">Layout da página</div>
           <div class="coluna">23/05/2024</div>
+          <button class="coluna" type="button">Remover</button>
         </div>
       </div>
     </div>
