@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciamento</title>
+  </head>
+  <body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+      * {
+        font-family: Poppins, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: white;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(0, 39, 75);
+      }
+
+      header {
+        display: flex;
+        width: 100vw;
+        height: 10vh;
+        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.666);
+        align-items: center;
+        position: fixed;
+        background-color: rgb(19, 19, 19);
+        z-index: 1;
+      }
+
+      #header {
+        padding: 0px 5%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      button {
+        background-color: rgb(15, 31, 56);
+        width: 200px;
+        height: 50px;
+        font-size: medium;
+        transition: transform 0.2s;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+
+      /* Estilos para o modal e sobreposição */
+      #modal-overlay {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
+        z-index: 2; /* Coloca sobre o conteúdo */
+        justify-content: center;
+        align-items: center;
+      }
+
+      #tela_cadastro {
+        background-color: #141414;
+        padding: 20px;
+        border-radius: 5px;
+        width: 300px;
+        color: white;
+        text-align: center;
+        font-size: larger;
+      }
+      #tela_cadastro input{
+        text-align: center;
+        width: 100%;
+        font-size: large;
+        margin-bottom: 3%;
+      }
+
+      #fechar-btn {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+      }
+      #cadastrar-btn {
+        background-color: rgb(77, 167, 212);
+        color: white;
+        border: none;
+        padding: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+
+      #geral {
+        height: 100vh;
+        padding-top: 12vh;
+        padding-left: 1%;
+        padding-right: 1%;
+        background-color: rgb(0, 39, 75);
+        background-image: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.2)
+        );
+      }
+
+      #tabela_gerenciamento {
+        border: 5px solid #141414;
+        border-radius: 5px;
+        width: 100%;
+        display: table;
+        background-color: #141414;
+        border-collapse: collapse;
+      }
+
+      #indice_tabela {
+        font-weight: bold;
+        background-color: #000000;
+      }
+
+      .linha {
+        display: table-row;
+      }
+
+      .coluna {
+        display: table-cell;
+        padding: 10px;
+      }
+    </style>
+
+    <header>
+      <div id="header">
+        <h1>Proa-Gestão</h1>
+        <button type="button" onclick="abrirModal()">Cadastrar</button>
+      </div>
+    </header>
+
+    <!-- Modal e sobreposição -->
+    <div id="modal-overlay">
+      <div id="tela_cadastro">
+        <h1>Cadastrar Atividade</h1><br>
+        <label>Data de Cadastro</label>
+        <input type="date" />
+        <br />
+        <label>Nome</label>
+        <input type="text" placeholder="Nome" />
+        <br />
+        <label>Cargo</label>
+        <input type="text" placeholder="Cargo" />
+        <br />
+        <label>Atividade</label>
+        <input type="text" placeholder="Nome da Atividade" />
+        <br />
+        <label>Data Limite</label>
+        <input type="Date" placeholder="Data Limite" />
+        <br />
+        <button id="fechar-btn" onclick="fecharModal()">Fechar</button>
+        <button id="cadastro-btn" onclick="fecharModal()">Cadastrar</button>
+      </div>
+    </div>
+
+    <div id="geral">
+      <div id="tabela_gerenciamento">
+        <div id="indice_tabela" class="linha">
+          <div class="coluna">Data de cadastro</div>
+          <div class="coluna">Nome</div>
+          <div class="coluna">Função</div>
+          <div class="coluna">Última atividade</div>
+          <div class="coluna">Data limite</div>
+        </div>
+        <div id="corpo_tabela" class="linha">
+          <div class="coluna">23/04/2024</div>
+          <div class="coluna">João</div>
+          <div class="coluna">Designer</div>
+          <div class="coluna">Layout da página</div>
+          <div class="coluna">23/05/2024</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function abrirModal() {
+        document.getElementById("modal-overlay").style.display = "flex"; // Exibe o modal
+      }
+
+      function fecharModal() {
+        document.getElementById("modal-overlay").style.display = "none"; // Esconde o modal
+      }
+    </script>
+  </body>
+</html>
