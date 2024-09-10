@@ -16,8 +16,16 @@ class Atividade {
         <div class="coluna">${this.atividade}</div>
         <div class="coluna">${this.dataLimite}</div>
         <div class="coluna"><button type="button" onclick="tabela.removerLinha(this)">Remover</button></div>
-        <div class="coluna"><button type="button" onclick="">Info</button></div>
       </div>
     `;
   }
+
+  validarDados() {
+    if (!this.nome || !this.cargo || !this.atividade || !this.dataLimite || this.dataLimite < this.dataCadastro) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
 }

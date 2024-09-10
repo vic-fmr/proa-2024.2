@@ -10,12 +10,12 @@
     <header>
       <div id="header">
         <h1>Proa-Gestão</h1>
-        <button type="button" onclick="abrirModal()">Cadastrar</button>
+        <button type="button" onclick="cadastro.abrir()">Cadastrar</button>
       </div>
     </header>
 
-    <!-- Modal e sobreposição -->
-    <div id="modal-overlay">
+    
+    <div id="cadastro-overlay">
       <form id="formulario">
         <div id="tela_cadastro">
           <h1>Cadastrar Atividade</h1>
@@ -42,7 +42,7 @@
           <input type="date" id="dataLimite" />
           <br />
 
-          <button id="fechar-btn" type="button" onclick="fecharModal()">
+          <button id="fechar-btn" type="button" onclick="cadastro.fechar()">
             Fechar
           </button>
           <button id="cadastro-btn" type="button" onclick="cadastrar()">
@@ -61,12 +61,20 @@
           <div class="coluna">Última atividade</div>
           <div class="coluna">Data limite</div>
           <div class="coluna">Remover Atividade</div>
-          <div class="coluna">Info</div>
+        </div>
+        <div class="linha">
+          <div class="coluna">10/09/2024</div>
+          <div class="coluna">João</div>
+          <div class="coluna">Desenvolvedor</div>
+          <div class="coluna">Sistema de Cadastro</div>
+          <div class="coluna">10/11/2024</div>
+          <div class="coluna"><button type="button" onclick="tabela.removerLinha(this)">Remover</button></div>
         </div>
       </div>
     </div>
-    <script src="modal.js"></script>
+    <script src="cadastro.js"></script>
     <script src="atividade.js"></script>
     <script src="tabela.js"></script>
+    <script src="back-end.js"></script>
   </body>
 </html>
