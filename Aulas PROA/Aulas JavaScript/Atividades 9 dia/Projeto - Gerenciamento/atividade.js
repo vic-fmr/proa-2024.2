@@ -21,7 +21,7 @@ class Atividade {
   }
 
   validarDados() {
-    if (!this.nome || !this.cargo || !this.atividade || !this.dataLimite || this.dataLimite < this.dataCadastro) {
+    if (!this.nome || !this.cargo || !this.atividade || this.dataLimite == "undefined/undefined/" || this.dataLimite < this.dataCadastro) {
       return false;
     } else {
       return true;
