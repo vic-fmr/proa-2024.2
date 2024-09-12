@@ -1,0 +1,46 @@
+/* Reset de margens e preenchimentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Adicionando box-sizing para garantir que o padding e margin não afetam o cálculo da largura e altura */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Faz com que o body ocupe a altura total da janela */
+    margin: 0; /* Remove a margem padrão do body */
+}
+
+#imagensGeral {
+    height: 70vh;
+    width: 100%; /* Defina a largura desejada */
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imagensLinha {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: blueviolet;
+    margin: 3% 0;
+}
+
+.imagem {
+    margin: 0 1%;
+    transition: transform 0.7s;
+}
+.imagem:hover{
+    transform: scale(1.1);
+}
+
+img {
+    height: 150px;
+}
