@@ -1,46 +1,306 @@
-/* Reset de margens e preenchimentos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Adicionando box-sizing para garantir que o padding e margin não afetam o cálculo da largura e altura */
+/* Reseta o box-sizing para border-box em todos os elementos e seus pseudo-elementos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    /* Inclui padding e border no cálculo da largura e altura */
 }
 
+/* Define variáveis CSS para tamanhos e espaçamentos */
+:root {
+    --handle-size: 3rem;
+    /* Tamanho dos botões de navegação */
+    --img-gap: .25rem;
+    /* Espaçamento entre as imagens */
+}
+
+/* Remove margens padrão do body */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Faz com que o body ocupe a altura total da janela */
-    margin: 0; /* Remove a margem padrão do body */
+    margin: 0;
+    /* Remove a margem padrão para evitar espaçamento indesejado */
 }
 
-#imagensGeral {
-    height: 70vh;
-    width: 100%; /* Defina a largura desejada */
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.imagensLinha {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+header {
     width: 100%;
-    background-color: blueviolet;
-    margin: 3% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    transition: background-color 0.3s ease;
+    height: 15vh;
 }
 
-.imagem {
-    margin: 0 1%;
-    transition: transform 0.7s;
+header.scrolled {
+    background-color: #000;
 }
-.imagem:hover{
+
+header .logo img {
+    width: 120px;
+    margin-right: 50px;
+}
+
+header .nav-container {
+    display: flex;
+    flex-grow: 1;
+
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #f1f1f1d3;
+    font-size: 18px;
+    transition: color 0.3s;
+    margin-right: 25px;
+}
+
+header nav ul li:first-child a {
+    color: #fff;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #b8b6b6;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icons-perfil {
+    width: 170px;
+    height: auto;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#photo-pinguim {
+    width: 50px;
+    height: auto;
+    margin-right: 80px;
+    border-radius: 0;
+    display: inline-block;
+}
+
+
+/* Estiliza o container do slider */
+.filmesLinha {
+    display: flex;
+    /* Usa flexbox para alinhar os elementos */
+    justify-content: center;
+    /* Centraliza o slider horizontalmente */
+    overflow: hidden;
+    /* Oculta qualquer conteúdo que exceda o contêiner */
+}
+
+/* Estiliza o slider */
+.carrossel {
+    --items-per-screen: 6;
+    /* Define o número de imagens visíveis por vez */
+    --slider-index: 0;
+    /* Índice atual do slider */
+    display: flex;
+    /* Alinha as imagens horizontalmente */
+    flex-grow: 1;
+    /* Permite que o slider ocupe o espaço disponível */
+    margin: 0 var(--img-gap);
+    /* Adiciona margem horizontal ao slider */
+    transform: translateX(calc(var(--slider-index) * -100%));
+    /* Move o slider para mostrar as imagens corretas */
+    transition: transform 250ms ease-in-out;
+    /* Anima a transição de movimento do slider */
+    overflow: visible;
+}
+
+/* Estiliza as imagens dentro do slider */
+.carrossel>img {
+    flex: 0 0 calc(100% / var(--items-per-screen));
+    /* Define a largura das imagens baseando-se no número de itens por tela */
+    max-width: calc(100% / var(--items-per-screen));
+    /* Limita a largura máxima das imagens */
+    aspect-ratio: 16 / 9;
+    /* Define a proporção da imagem */
+    padding: var(--img-gap);
+    /* Adiciona espaçamento ao redor das imagens */
+    border-radius: 5px;
+    /* Arredonda os cantos das imagens */
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: visible;
+    height: 20vh;
+}
+.carrossel img:hover{
     transform: scale(1.1);
+    overflow: visible;
 }
 
-img {
-    height: 150px;
+/* Estiliza os botões de navegação */
+.seta {
+    border: none;
+    /* Remove a borda padrão dos botões */
+    border-radius: 1rem;
+    /* Arredonda os cantos dos botões */
+    flex-grow: 0;
+    /* Impede que os botões cresçam para ocupar mais espaço */
+    flex-shrink: 0;
+    /* Impede que os botões diminuam de tamanho */
+    background-color: rgba(255, 255, 255, .25);
+    /* Define a cor de fundo com transparência */
+    z-index: 10;
+    /* Define a camada de empilhamento para sobrepor outros elementos */
+    margin: var(--img-gap) 0;
+    /* Adiciona margem vertical aos botões */
+    width: var(--handle-size);
+    /* Define a largura dos botões */
+    cursor: pointer;
+    /* Muda o cursor para um ponteiro quando passa sobre o botão */
+    font-size: 5rem;
+    /* Define o tamanho da fonte para os ícones */
+    display: flex;
+    /* Usa flexbox para alinhar o conteúdo dos botões */
+    align-items: center;
+    /* Alinha verticalmente o conteúdo dos botões */
+    justify-content: center;
+    /* Alinha horizontalmente o conteúdo dos botões */
+    color: white;
+    /* Define a cor do texto (ícone) como branca */
+    line-height: 0;
+    /* Remove o espaçamento entre linhas para o ícone */
+    transition: background-color 150ms ease-in-out;
+    /* Anima a mudança de cor de fundo */
+}
+
+/* Estiliza o botão de navegação à esquerda */
+.seta_esquerda {
+    border-top-left-radius: 0;
+    /* Remove o arredondamento superior esquerdo */
+    border-bottom-left-radius: 0;
+    /* Remove o arredondamento inferior esquerdo */
+}
+
+/* Estiliza o botão de navegação à direita */
+.seta_direita {
+    border-top-right-radius: 0;
+    /* Remove o arredondamento superior direito */
+    border-bottom-right-radius: 0;
+    /* Remove o arredondamento inferior direito */
+}
+
+/* Estiliza o estado de foco e hover dos botões */
+.seta:hover,
+.seta:focus {
+    background-color: rgba(255, 255, 255, .5);
+    /* Muda a cor de fundo para um tom mais claro quando o botão é focado ou passado o mouse */
+}
+
+/* Estiliza o texto dentro dos botões */
+.text {
+    transition: transform 150ms ease-in-out;
+    /* Anima a transformação do texto */
+}
+
+/* Aumenta o tamanho do texto quando o botão é focado ou o mouse passa sobre ele */
+.seta:hover .text,
+.seta:focus .text {
+    transform: scale(1.2);
+    /* Escala o texto para 120% do tamanho original */
+}
+
+/* Estiliza o cabeçalho */
+.topo_da_linha {
+    display: flex;
+    /* Usa flexbox para alinhar os elementos do cabeçalho */
+    justify-content: space-between;
+    /* Distribui espaço igualmente entre os itens */
+    padding: .5rem calc(var(--img-gap) * 2 + var(--handle-size));
+    /* Adiciona padding ao redor do cabeçalho */
+    align-items: center;
+    /* Alinha verticalmente o conteúdo do cabeçalho */
+}
+
+/* Estiliza o título do cabeçalho */
+.titulo {
+    font-size: 1.5rem;
+    /* Define o tamanho da fonte do título */
+    margin: 0;
+    /* Remove a margem padrão ao redor do título */
+}
+
+/* Estiliza a barra de progresso */
+.barras_de_progresso {
+    display: flex;
+    /* Usa flexbox para alinhar os itens da barra de progresso */
+    gap: .25rem;
+    /* Adiciona espaçamento entre os itens da barra de progresso */
+}
+
+/* Estiliza cada item da barra de progresso */
+.item-progresso {
+    flex: 0 0 1.5rem;
+    /* Define o tamanho dos itens da barra de progresso */
+    min-width: 1.5rem;
+    /* Define a largura mínima dos itens */
+    height: .2rem;
+    /* Define a altura dos itens */
+    background-color: rgba(255, 255, 255, .5);
+    /* Define a cor de fundo dos itens com transparência */
+}
+
+/* Estiliza o item ativo da barra de progresso */
+.item-progresso.active {
+    background-color: rgba(255, 255, 255, .9);
+    /* Muda a cor de fundo para um tom mais claro quando ativo */
+}
+
+/* Estiliza o slider em telas menores */
+@media (max-width: 1000px) {
+    .carrossel {
+        --items-per-screen: 3;
+        /* Reduz o número de imagens visíveis para 3 em telas menores */
+    }
+}
+
+/* Estiliza o slider em telas muito pequenas */
+@media (max-width: 500px) {
+    .carrossel {
+        --items-per-screen: 2;
+        /* Reduz o número de imagens visíveis para 2 em telas muito pequenas */
+    }
+}
+
+/* Estiliza o body para ter um fundo escuro e texto claro */
+body {
+    background-color: #333;
+    /* Define a cor de fundo do body como cinza escuro */
+    color: white;
+    /* Define a cor do texto como branca */
+}
+
+footer{
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 30vh;
+    text-align: center;
+    padding: 1%;
+    margin-top: 100px;
 }

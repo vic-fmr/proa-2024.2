@@ -6,63 +6,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix</title>
     <link rel="stylesheet" href="../css/series.css">
+    <script src="../js/carrossel.js" defer></script>
 </head>
 
 <body>
-    <div id="imagensGeral">
-        <div class="imagensLinha">
-            <div class="imagem">
-                <img
-                    src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4">
-            </div>
-            <div class="imagem">
-                <img
-                    src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4">
-            </div>
-            <div class="imagem">
-                <img
-                    src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4">
-            </div>
-            <div class="imagem">
-                <img
-                    src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4">
-            </div>
-            <div class="imagem">
-                <img
-                    src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4">
-            </div>
-            <div class="imagem">
-                <img
-                    src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4">
-            </div>
+    <header>
+        <div class="logo">
+            <img src="../imagens/Netflix_Logo_RGB.png" alt="Logo">
         </div>
-        <div class="imagensLinha">
-            <div class="imagem">
-                <img
-                    src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4">
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Séries</a></li>
+                    <li><a href="#">Filmes</a></li>
+                    <li><a href="#">Novidades</a></li>
+                    <li><a href="#">Minha lista</a></li>
+                    <li><a href="#">Navegar por idiomas</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="user-profile">
+            <img src="https://wallpapers.com/images/hd/netflix-profile-pictures-5yup5hd2i60x7ew3.jpg" alt="User Profile"
+                class="icons-perfil" id="photo-pinguim">
+        </div>
+
+    </header>
+
+    <div class="filmesLinhaGeral">
+        <div class="topo_da_linha">
+            <h3 class="titulo">Indicados da semana</h3>
+            <div class="barras_de_progresso"></div>
+        </div>
+        <div class="filmesLinha">
+            <button class="seta seta_esquerda">
+                <div class="text">&#8249;</div>
+            </button>
+            <div class="carrossel">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
             </div>
-            <div class="imagem">
-                <img
-                    src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4">
-            </div>
-            <div class="imagem">
-                <img
-                    src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4">
-            </div>
-            <div class="imagem">
-                <img
-                    src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4">
-            </div>
-            <div class="imagem">
-                <img
-                    src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4">
-            </div>
-            <div class="imagem">
-                <img
-                    src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4">
-            </div>
+            <button class="seta seta_direita">
+                <div class="text">&#8250;</div>
+            </button>
         </div>
     </div>
+
+    <div class="filmesLinhaGeral">
+        <div class="topo_da_linha">
+            <h3 class="titulo">Continuar Assistindo</h3>
+            <div class="barras_de_progresso"></div>
+        </div>
+        <div class="filmesLinha">
+            <button class="seta seta_esquerda">
+                <div class="text">&#8249;</div>
+            </button>
+            <div class="carrossel">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/297/400/250.jpg?hmac=KwHTiNUh_8Z4YC7poO_2YYmAh1WMo67xO21xYo4F-iE"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+                <img src="https://fastly.picsum.photos/id/532/400/250.jpg?hmac=1L1MyiQ4l3qmRxN6-mEEMM6VZ_g9OqrySDiG8gQion4"
+                    alt="">
+            </div>
+            <button class="seta seta_direita">
+                <div class="text">&#8250;</div>
+            </button>
+        </div>
+    </div>
+    <script src="../js/perfis.js"></script>
 </body>
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Netflix, Inc. Todos os direitos reservados.</p>
+        <p>Privacidade | Termos de Uso | Ajuda</p>
+        <p>Assista onde quiser. Disponível em dispositivos móveis e desktop.</p>
+    </div>
+</footer>
 
 </html>
