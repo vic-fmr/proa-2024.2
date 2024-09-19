@@ -2,28 +2,30 @@ import { useState } from "react";
 
 function Calculo() {
     const [value, setValue] = useState('');
+    const [n1, setN1] = useState('')
+    const [n2, setN2] = useState('')
+
+    function isEmpty() {
+        return n1.length === 0 || n2.length === 0;
+    }
 
     function somar() {
-        const n1 = parseInt(document.getElementById("n1").value);
-        const n2 = parseInt(document.getElementById("n2").value);
-        setValue(n1 + n2);
+        if(!isEmpty()){
+        setValue(n1 + n2);}
+        else{
+            alert("Digite um valor")
+        }
     }
 
     function subtrair() {
-        const n1 = parseInt(document.getElementById("n1").value);
-        const n2 = parseInt(document.getElementById("n2").value);
         setValue(n1 - n2);
     }
     
     function multiplicar() {
-        const n1 = parseInt(document.getElementById("n1").value);
-        const n2 = parseInt(document.getElementById("n2").value);
         setValue(n1 * n2);
     }
     
     function dividir() {
-        const n1 = parseInt(document.getElementById("n1").value);
-        const n2 = parseInt(document.getElementById("n2").value);
 
         if (n2 == 0) {
             setValue("Divisão por zero não permitido.");
@@ -33,9 +35,10 @@ function Calculo() {
     }
 
     return (
-        <div>
-            <input id="n1" type="number"/>
-            <input id="n2" type="number"/>
+        <div className="calculadora">
+            <h1>Calculadora</h1>
+            <input id="n1" type="number" onChange={(e) =>{setN1(Number(e.target.value))}}/>
+            <input id="n2" type="number" onChange={(e) =>{setN2(Number(e.target.value))}}/>
             <button id="button" onClick={somar}>Somar</button>
             <button id="button" onClick={subtrair}>Subtrair</button>
             <button id="button" onClick={multiplicar}>Multiplicar</button>
