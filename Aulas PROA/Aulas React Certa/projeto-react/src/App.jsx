@@ -7,7 +7,7 @@ import {Calculo} from './components/Challange';
 function App() {
 	return (
 	  <>
-    <Calculo/>
+    <Calculo titulo = "Calculadora"/>
     {/*<Imagens/>*/} 
     </>
 	);

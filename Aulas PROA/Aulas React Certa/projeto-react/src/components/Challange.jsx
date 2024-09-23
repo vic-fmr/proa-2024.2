@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Calculo() {
+function Calculo(props) {
     const [value, setValue] = useState('');
     const [n1, setN1] = useState('')
     const [n2, setN2] = useState('')
@@ -36,7 +36,7 @@ function Calculo() {
 
     return (
         <div className="calculadora">
-            <h1>Calculadora</h1>
+            <h1>{props.titulo}</h1>
             <input id="n1" type="number" onChange={(e) =>{setN1(Number(e.target.value))}}/>
             <input id="n2" type="number" onChange={(e) =>{setN2(Number(e.target.value))}}/>
             <button id="button" onClick={somar}>Somar</button>
