@@ -1,80 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gerenciamento</title>
-    <link rel="stylesheet" href="stylesheet.css" />
-  </head>
-  <body>
-    <header>
-      <div id="header">
-        <h1>Proa-Gestão</h1>
-        <button type="button" onclick="cadastro.abrir()">Cadastrar</button>
-      </div>
-    </header>
 
-    
-    <div id="cadastro-overlay">
-      <form id="formulario">
-        <div id="tela_cadastro">
-          <h1>Cadastrar Atividade</h1>
-          <br />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciamento</title>
+  <link rel="stylesheet" href="stylesheet.css" />
+</head>
 
-          <label>Nome</label>
+<body>
+  <header>
+    <div id="header">
+      <h1>Proa-Gestão</h1>
+      <button type="button" onclick="cadastro.abrir()">Cadastrar</button>
+    </div>
+  </header>
+
+
+  <div id="cadastro-overlay">
+    <form id="formulario">
+      <div id="tela_cadastro">
+        <h1>Cadastrar Atividade</h1>
+        <br />
+
+        <label>Nome
           <input type="text" id="nome" placeholder="Nome" />
-          <br />
+        </label>
+        <br />
 
-          <label>Cargo</label><br />
+        <label>Cargo
           <select id="cargo">
             <option>Desenvolvedor</option>
             <option>Designer</option>
             <option>QA Tester</option>
             <option>Estagiário</option>
           </select>
-          <br />
+        </label>
+        <br />
 
-          <label>Atividade</label>
-          <input type="text" id="atividade" placeholder="Nome da Atividade" />
-          <br />
+        <label>Atividade</label>
+        <input type="text" id="atividade" placeholder="Nome da Atividade" />
+        <br />
 
-          <label>Data Limite</label>
-          <input type="date" id="dataLimite" />
-          <br />
+        <label>Data Limite</label>
+        <input type="date" id="dataLimite" />
+        <br />
 
-          <button id="fechar-btn" type="button" onclick="cadastro.fechar()">
-            Fechar
-          </button>
-          <button id="cadastro-btn" type="button" onclick="cadastrar()">
-            Cadastrar
-          </button>
-        </div>
-      </form>
-    </div>
+        <button id="fechar-btn" type="button" onclick="cadastro.fechar()">
+          Fechar
+        </button>
+        <button id="cadastro-btn" type="button" onclick="cadastrar()">
+          Cadastrar
+        </button>
+      </div>
+    </form>
+  </div>
 
-    <div id="geral">
-      <div id="tabela_gerenciamento">
-        <div id="indice_tabela" class="linha">
-          <div class="coluna">Data de cadastro</div>
-          <div class="coluna">Nome</div>
-          <div class="coluna">Cargo</div>
-          <div class="coluna">Última atividade</div>
-          <div class="coluna">Data limite</div>
-          <div class="coluna">Remover Atividade</div>
-        </div>
-        <div class="linha">
-          <div class="coluna">10/09/2024</div>
-          <div class="coluna">João</div>
-          <div class="coluna">Desenvolvedor</div>
-          <div class="coluna">Sistema de Cadastro</div>
-          <div class="coluna">10/11/2024</div>
-          <div class="coluna"><button type="button" onclick="tabela.removerLinha(this)">Remover</button></div>
-        </div>
+  <div id="geral">
+    <div id="tabela_gerenciamento">
+      <div id="indice_tabela" class="linha">
+        <div class="coluna">Data de cadastro</div>
+        <div class="coluna">Nome</div>
+        <div class="coluna">Cargo</div>
+        <div class="coluna">Última atividade</div>
+        <div class="coluna">Data limite</div>
+        <div class="coluna">Remover Atividade</div>
+      </div>
+      <div class="linha">
+        <div class="coluna">10/09/2024</div>
+        <div class="coluna">João</div>
+        <div class="coluna">Desenvolvedor</div>
+        <div class="coluna">Sistema de Cadastro</div>
+        <div class="coluna">10/11/2024</div>
+        <div class="coluna"><button type="button" onclick="tabela.removerLinha(this)">Remover</button></div>
       </div>
     </div>
-    <script src="cadastro.js"></script>
-    <script src="atividade.js"></script>
-    <script src="tabela.js"></script>
-    <script src="back-end.js"></script>
-  </body>
+  </div>
+  <script src="cadastro.js"></script>
+  <script src="atividade.js"></script>
+  <script src="tabela.js"></script>
+  <script src="back-end.js"></script>
+</body>
+
 </html>
