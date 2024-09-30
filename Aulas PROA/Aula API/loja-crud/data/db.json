@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": "eb89",
+      "name": "Victor",
+      "price": 45
+    },
+    {
+      "id": "4cf8",
+      "name": "Victor",
+      "price": 20
+    },
+    {
+      "id": "a40d",
+      "name": "vict",
+      "price": 1
+    },
+    {
+      "id": "a75b",
+      "name": "bic",
+      "price": 1
+    },
+    {
+      "id": "09ad",
+      "name": "wafawfw",
+      "price": 20.01
+    }
+  ]
+}
