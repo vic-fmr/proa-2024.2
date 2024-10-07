@@ -1,0 +1,85 @@
+input{
+    margin: 0px 30px 0px 5px;
+    text-align: center;
+    font-size: medium;
+}
+#criar-atualizar{
+    border: none;
+    width: 150px;
+    background-color: lightblue;
+    font-weight: bold;
+}
+#criar-atualizar:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+#editar{
+    background-color: darkblue;
+    color: white;
+    border: none;
+    padding: 0px 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+#editar:hover{
+    background-color: white;
+    color: black;
+}
+#deletar{
+    background-color: red;
+    color: white;
+    padding: 0px 20px;
+    cursor: pointer;
+    border: none;
+}
+#deletar:hover{
+    background-color: white;
+    color: black;
+}
+.form-card {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    background-color: gray;
+}
+
+.auto-card {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.cabecalho{
+    list-style: none;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+}
+.cabecalho li{
+    border: 1px solid white;
+    width: 100%;
+    text-align: center;
+}
+.auto-car{
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+.auto-list{
+    list-style: none;
+}
+.auto-details{
+    display: flex;
+    width: 100vw;
+    justify-content:space-around;
+}
+.detail{
+    width: 20vw;
+    text-align: center;
+}
