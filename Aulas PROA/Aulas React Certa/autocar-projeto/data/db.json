@@ -1,18 +1,11 @@
 {
   "autos": [
     {
-      "marca": "Honda",
-      "modelo": "Civic",
-      "preco": 700,
-      "ano": 2004,
-      "id": "2"
-    },
-    {
-      "id": "3",
-      "marca": "Marca",
-      "modelo": "Modelo",
-      "preco": 777,
-      "ano": 2016
+      "id": "7362",
+      "marca": "ferrari",
+      "modelo": "foda",
+      "preco": 20000000000000000000,
+      "ano": 2024
     }
   ]
 }
