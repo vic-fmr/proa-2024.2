@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Login.css";
 const baseAuthURL = "http://localhost:8080/auth/";
 
-export default function Login(setToken) {
+export default function Login({ setToken }) {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
 
@@ -37,7 +37,6 @@ export default function Login(setToken) {
             />
             <button onClick={getToken}>Enviar</button>
             <br />
-            <p>{token}</p>
         </div>
     );
 }
